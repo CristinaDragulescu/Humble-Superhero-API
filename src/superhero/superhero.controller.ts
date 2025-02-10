@@ -7,9 +7,10 @@ export class SuperheroController {
   constructor(private readonly superheroService: SuperheroService) {}
 
   @Post()
-  create(@Body() superhero: Superhero): Superhero | { message: string } {
+  create(@Body() superhero: Superhero): Superhero[] | { message: string } {
     return this.superheroService.create(superhero);
   }
+
   @Get()
   findAll(): Superhero[] {
     return this.superheroService.findAllSortedByHumilityScore();
